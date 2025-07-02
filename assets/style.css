@@ -1,21 +1,66 @@
+/* -- Root -- */
+:root{
 
+    --primary-color: #11120d;
+    --secondary-color: #565449;
+    --accent-color: #D8CFBC;
+    --p-font-color: #fffbf4;
+    --h-font-color: #4f493f;
+
+    --primary-light-color: #fffbf4;
+    --secondary-light-color: #D8CFBC;
+    --accent-light-color: #4f493f;
+    --p-font-light-color: #11120d;
+    --h-font-light-color: #565449;
+
+    --font-size: 1.125rem;
+    --header-size: 2.125rem;
+
+    --logo-img-w: 50px;
+    --logo-img-h: 50px;
+
+    --icon-w: 25px;
+    --icon-h: 25px;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: var(--p-font-color);
+}
 /*  navbar */
 nav {
     height: 12vh;
     width: 100vw;
-    background-color: aquamarine;
+    background-color: var(--secondary-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.nav-left {
+.nav_left {
     display: flex;
     gap: 3ch;
     justify-content: space-around;
 }
 
-.nav-right {
+    .nav-logo > i {
+        font-size: 2rem;
+    }
+    .nav-name {
+        font-size: 1.25rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        font-family: 'Montserrat';
+    }
+
+.nav_right {
     display: flex;
     flex-direction: row;
     gap: 3ch;
@@ -25,23 +70,35 @@ nav {
 main {
     height: 100vh;
     width: 100vw;
-    background-color: burlywood;
+    background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
 .ligne1 {
+    border: solid var(--accent-color);
+    height: 10rem;
+    width: auto;
+    align-items: center;
     display: flex;
     justify-content: space-around;
 }
 
 .ligne2 {
+    border: solid var(--accent-color);
+    height: 10rem;
+    width: auto;
     display: flex;
+    align-items: center;
     justify-content: space-around;
 }
 
 .ligne3 {
+    border: solid var(--accent-color);
+    height: 10rem;
+    width: auto;
+    align-items: center;
     display: flex;
     justify-content: space-around;
 }
@@ -51,8 +108,8 @@ main {
 footer {
     height: 8vh;
     width: 100vw;
-    background-color: blue;
-    color: aliceblue;
+    background-color: var(--secondary-color);
+    color: var(--p-font-color);
     display: flex;
     align-items: center;
     justify-content: center;

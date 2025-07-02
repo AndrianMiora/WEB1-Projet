@@ -1,7 +1,7 @@
 {
   "name": "web1-projet",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +16,5 @@
     "url": "https://github.com/AndrianMiora/WEB1-Projet/issues"
   },
   "homepage": "https://github.com/AndrianMiora/WEB1-Projet#readme",
-  "description": "",
-  "dependencies": {
-    "@tailwindcss/cli": "^4.1.10",
-    "tailwindcss": "^4.1.10"
-  }
+  "description": ""
 }
