@@ -5,13 +5,13 @@ Il s'agit d'une plateforme de prise de note nommée: memoByte, petit clin d'oeil
 
 ## Comment accéder à memoByte?
 **Etape 1**:
-![image](![git-tuto-1](https://github.com/user-attachments/assets/c7cb73e7-7b54-4d7c-8697-ce3e9e51232e)
-)
+![image](https://github.com/user-attachments/assets/c7cb73e7-7b54-4d7c-8697-ce3e9e51232e)
+
  Comme indiqué ci-dessus, veuillez copier le lien du dépot.
 
 **Etape 2**:
-![image](![git-tuto-2](https://github.com/user-attachments/assets/0af6a39d-2511-4e83-98b8-d1bc5c879960)
-)
+![image](https://github.com/user-attachments/assets/0af6a39d-2511-4e83-98b8-d1bc5c879960)
+
  Puis, connectez-vous au dossier dans votre machine ou vous souhaitiez mettre le fichier
 
 ``` bash
