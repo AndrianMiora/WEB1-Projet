@@ -6,7 +6,7 @@ Il s'agit d'une plateforme de prise de note nommée: memoByte, petit clin d'oeil
 ## Comment accéder à memoByte?
 **Etape 1**:
 ![image]()
- Comme indiqué ci-dessus, veuilley copier le lien du dépot.
+ Comme indiqué ci-dessus, veuillez copier le lien du dépot.
 
 **Etape 2**:
 ![image]()
@@ -22,7 +22,7 @@ cd Documents
 git clone https://github.com/AndrianMiora/WEB1-Projet.git
 ```
 
-> IMPORTANT: veuillez faire en sorte d'avoir git installe sur votre machine. Pour verifier, executez la commande suivante: 
+> IMPORTANT: veuillez faire en sorte d'avoir git installé sur votre machine. Pour vérifier, executez la commande suivante: 
 
 ```bash
 git --version
