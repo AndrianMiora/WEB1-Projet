@@ -128,6 +128,7 @@ main {
         flex-direction: column;
         align-items: center;
         border: dashed var(--accent-color);
+        border-radius: 25%;
         width: 7rem;
         height: 7rem;
         cursor: pointer;
@@ -249,10 +250,10 @@ main {
 }
 
 .note-card{
-    background-color: var(--secondary-light-color);
+    background-color: var(--accent-color);
     color: var(--p-font-light-color);
     width: 15rem;
-    height: 12.5rem;
+    height: 10rem;
     border-radius: 1rem;
     padding: 1rem;
     margin-top: 1rem;
@@ -265,7 +266,8 @@ main {
 }
 
 .container{
-    overflow: scroll;
+    overflow-y: scroll;
+
 }
 
 /* footer */

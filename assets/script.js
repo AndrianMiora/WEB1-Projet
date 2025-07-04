@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function(){
     const ajouterNote = document.getElementById("new-note_btn");
     const container = document.getElementById("container");
@@ -11,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function(){
             <div class = "note-modal-content">
                 <textarea class="note-title" placeholder="Titre..."></textarea>
                 <textarea class="note-content" placeholder="Entrez le contenu de votre note ici..."></textarea>
-                <input class="note-tags" type="text" placeholder="Entrez un tag... (ex: #todo, #shoppinglist)"
+                <input class="note-tags" type="text" placeholder="Entrez un tag... (ex: #todo, #shoppinglist)">
                 <div class="modal-actions">
                     <button class="save-note">Entregistrer</button>
                     <button class="close-note">Annuler</button>
