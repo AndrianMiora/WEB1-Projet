@@ -36,10 +36,10 @@
             <div class="nav-logo">
                 <i class="fa-solid fa-file-code"></i>
             </div>
-            <span class="nav-name"> < memoByte /></span>
+            <span class="nav-name"> &lt; memoByte /&gt; </span>
         </div>
-
-        <div class="nav_centre">
+        
+        <div class="nav_right">
             <div class="nav_search-input">
                 <form id="search-form" action="#" class="search-bar">
                     <input
@@ -48,40 +48,27 @@
                     class="search-bar_input"
                     placeholder="chercher notes..."
                 />
-                <button type="submit" class="search-bar_btn">
+                <button type="submit" class="search-bar_btn" id="search-bar_btn">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button> 
                 </form>        
             </div>
 
-        <div class="nav_right">
             <div class="nav_profile">
                 <i class="fa-solid fa-circle-user"></i>
-            </div>
-            <div class="nav_new-note">
-                <i class="fa-solid fa-square-plus"></i>
             </div>
         </div>
     </nav>
 
     <!-- Format des notes -->
     <main>
-        <div class="ligne1">
-            <div>premier</div>
-            <div>deuxieme</div>
-            <div>troisieme</div>
+        <div class="main_new-note" id="new-note_btn">
+            <i class="fa-solid fa-plus"></i>
+            <p>Add Note</p>
         </div>
 
-        <div class="ligne2">
-            <div>ligne1</div>
-            <div>ligne2</div>
-            <div>ligne3</div>
-        </div>
-
-        <div class="ligne3">
-            <div>ordre1</div>
-            <div>ordre2</div>
-            <div>ordre3</div>
+        <div class="container">
+            <!--dans le JS: new-note_btn onclick(), new note appears-->
         </div>
         
     </main>

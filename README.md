@@ -29,3 +29,5 @@ git clone https://github.com/AndrianMiora/WEB1-Projet.git
 ```bash
 git --version
 ```
+
+**Etape

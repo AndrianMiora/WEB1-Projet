@@ -39,8 +39,11 @@ nav {
     width: 100vw;
     background-color: var(--secondary-color);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 3rem;
+    height: 12vh;
+    position: relative;
 }
 
 .nav_left {
@@ -63,45 +66,80 @@ nav {
 .nav_right {
     display: flex;
     flex-direction: row;
-    gap: 3ch;
-    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
+
+.nav_search-input .search-bar{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+}
+
+.nav_search-input .search-bar input{
+    width: 100%;
+    background-color: transparent;
+    font-family: "Montserrat";
+    outline: none;
+    border: none;
+    color: var(--text-color);
+}
+
+.search-bar .search-bar_btn{
+    background-color: transparent;
+    padding: 10px;
+    color: var(--text-color);
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s all ease-in;
+}
+
+.nav_search-input .search-bar button:hover{
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.nav_profile {
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+}
+
 /* main */
 main {
+    padding: 2rem;
     height: 100vh;
     width: 100vw;
     background-color: var(--primary-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+ 
 }
 
-.ligne1 {
-    border: solid var(--accent-color);
-    height: 10rem;
-    width: auto;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-}
+    .main_new-note {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        padding: 0.75rem;
+        flex-direction: column;
+        align-items: center;
+        border: dashed var(--accent-color);
+        width: 7rem;
+        height: 7rem;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    }
+    .main_new-note:hover{
+        transform: scale(1.1);
+    }
 
-.ligne2 {
-    border: solid var(--accent-color);
-    height: 10rem;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.ligne3 {
-    border: solid var(--accent-color);
-    height: 10rem;
-    width: auto;
-    align-items: center;
-    display: flex;
-    justify-content: space-around;
-}
+    .main_new-note > i {
+        padding: 0.5rem;
+    }
 
 
 /* footer */
