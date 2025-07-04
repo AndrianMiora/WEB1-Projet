@@ -264,6 +264,10 @@ main {
     margin-bottom: 0.5rem;
 }
 
+.container{
+    overflow: scroll;
+}
+
 /* footer */
 footer {
     height: 10vh;
