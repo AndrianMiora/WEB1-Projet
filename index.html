@@ -6,6 +6,7 @@
     <title>memoByte</title>
     <link href="./output.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/script.js" defer></script>    
 
         <!--Font Family-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,20 +26,19 @@
           referrerpolicy="no-referrer"
         />
 
-    <script src="assets/script.js" defer></script>    
-</head>
+    </head>
     
-<body>
-    <!-- Barre de Navigation -->
-    <nav>
-        <!-- A gauche: le logo et le nom-->
-        <div class="nav_left">
-            <div class="nav-logo">
-                <i class="fa-solid fa-file-code"></i>
+    <body>
+        <!-- Barre de Navigation -->
+        <nav>
+            <!-- A gauche: le logo et le nom-->
+            <div class="nav_left">
+                <div class="nav-logo">
+                    <i class="fa-solid fa-file-code"></i>
+                </div>
+                <span class="nav-name"> &lt; memoByte /&gt; </span>
             </div>
-            <span class="nav-name"> &lt; memoByte /&gt; </span>
-        </div>
-        
+            
         <div class="nav_right">
             <div class="nav_search-input">
                 <form id="search-form" action="#" class="search-bar">
@@ -46,14 +46,14 @@
                     id="search-box"
                     type="text"
                     class="search-bar_input"
-                    placeholder="chercher notes..."
-                />
-                <button type="submit" class="search-bar_btn" id="search-bar_btn">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </button> 
+                    placeholder="search notes..."
+                    />
+                    <button type="submit" class="search-bar_btn" id="search-bar_btn">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button> 
                 </form>        
             </div>
-
+            
             <div class="nav_profile">
                 <i class="fa-solid fa-circle-user"></i>
             </div>
@@ -64,19 +64,19 @@
     <main>
         <div class="main_new-note" id="new-note_btn">
             <i class="fa-solid fa-plus"></i>
-            <p>Add Note</p>
+            <p> Add Note</p>
         </div>
-
+        
         <div class="container" id="container">
             <!--dans le JS: new-note_btn onclick(), new note appears-->
         </div>
         
     </main>
-
+    
     <!-- Footer -->
     <footer>
         <h4>Vous avez au total 9 notes</h4>
     </footer>
-
+    
 </body>
 </html>
