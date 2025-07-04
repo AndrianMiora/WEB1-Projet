@@ -161,7 +161,7 @@ main {
         padding: 2rem;
         border-radius: 1rem;
         width: 70vw;
-        height: 70vh;
+        height: 90vh;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
@@ -218,6 +218,51 @@ main {
                 transform: scale(1.1);
                 box-shadow: 0 5px 20px var(--secondary-color);
             }
+
+
+.note-tags {
+    height: 2.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size);
+    font-family: "Montserrat";
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+    outline: none;
+    border: 1px solid var(--secondary-color);
+}
+
+.note-tag{
+    background-color: var(--accent-color);
+    color: var(--p-font-light-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.tag{
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-family: "Montserrat";
+}
+
+.note-card{
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+    width: 15rem;
+    height: 12.5rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Montserrat";
+}
+.note-card h3{
+    font-size: var(--header-size);
+    margin-bottom: 0.5rem;
+}
 
 /* footer */
 footer {

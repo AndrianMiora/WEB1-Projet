@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
             <div class = "note-modal-content">
                 <textarea class="note-title" placeholder="Titre..."></textarea>
                 <textarea class="note-content" placeholder="Entrez le contenu de votre note ici..."></textarea>
+                <input class="note-tags" type="text" placeholder="Entrez un tag... (ex: #todo, #shoppinglist)"
                 <div class="modal-actions">
                     <button class="save-note">Entregistrer</button>
                     <button class="close-note">Annuler</button>
@@ -21,7 +22,18 @@ document.addEventListener("DOMContentLoaded", function(){
             container.appendChild(noteModal);
 
             noteModal.querySelector(".save-note").addEventListener("click", function(){
-                alert("Votre note a bien ete enregistree");
+                const titre = noteModal.querySelector(".note-title").value.trim();
+                const tag = noteModal.querySelector(".note-tags").value.trim();
+                const noteCard = document.createElement("div");
+                noteCard.classList.add("note-card");
+                const tags = tag.split(" ").filter(tag => tag.startsWith("#")).map(tag => `<span class="note-tag"> ${tags}</span>`);
+
+                noteCard.innerHTML = `
+                <h3>${titre || "Nouvelle Note"}</h3>
+                <div class="tag">${tags}</div>
+                `;
+
+                container.appendChild(noteCard);
                 noteModal.remove();
             });
             noteModal.querySelector(".close-note").addEventListener("click", function(){
