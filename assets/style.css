@@ -42,7 +42,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 3rem;
-    height: 12vh;
     position: relative;
 }
 
@@ -76,8 +75,8 @@ nav {
     display: flex;
     padding: 10px;
     align-items: center;
-    height: 40px;
-    width: auto;
+    height: 7vh;
+    width: 17vw;
     background-color: var(--primary-color);
     border-radius: 30px;
 }
@@ -88,7 +87,7 @@ nav {
     font-family: "Montserrat";
     outline: none;
     border: none;
-    color: var(--text-color);
+    color: var(--p-font-color);
 }
 
 .search-bar .search-bar_btn{
@@ -111,12 +110,70 @@ nav {
     font-size: x-large;
     display: flex;
     align-items: center;
+    position: relative;
+    cursor: pointer;
 }
-.nav_filter {
-    font-size: x-large;
+
+    .dropbtn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: var(--p-font-color);
+        font-size: 1.5rem;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: var(--primary-light-color);
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+        min-width: 160px;
+        border-radius: 0.5rem;
+        z-index: 10;
+    }
+    
+    .dropdown-content a {
+        color: var(--p-font-light-color);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        font-family: "Montserrat";
+    }
+    
+    .dropdown-content a:hover {
+        background-color: var(--secondary-light-color);
+        border-radius: 0.5rem;
+    }
+    
+    .show {
+        display: block;
+    }
+
+
+
+.nav_sort {
     display: flex;
-    align-items: center; 
+    align-items: center;
+    font-family: "Montserrat";
 }
+
+.filter-select {
+    padding: 0.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--secondary-light-color);
+    background-color: var(--primary-light-color);
+    color: var(--p-font-light-color);
+    font-size: var(--font-size);
+    font-family: "Montserrat";
+    cursor: pointer;
+}
+
 
 /* main */
 main {
@@ -139,8 +196,9 @@ main {
         align-items: center;
         border: dashed var(--accent-color);
         border-radius: 25%;
-        width: 7rem;
+        width: 8rem;
         height: 7rem;
+        font-family: "Montserrat";
         cursor: pointer;
         transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
     }
@@ -290,7 +348,13 @@ main {
         color: var(--h-font-light-color);
         font-size: var(--font-size);
         border: none;
+        cursor: pointer;
+        transition: transform 0.2;
     }
+    .note-btn button:hover {
+        transform: scale(1.2);
+    }
+
     
 
 .container{
@@ -312,7 +376,81 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Montserrat";
 }
 
 
-/*------------------------Login Page----------------------------------*/
+/*--------------------------- Login Page -----------------------------------*/
+
+.login-container{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+
+}
+
+    .login-wrapper{
+        width: 50%;
+        height: 60vh;
+        background-color: var(--secondary-color);
+        padding: 2.5rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 15px var(--secondary-light-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-wrapper h1{
+        font-size: var(--header-size);
+        display: flex;
+        justify-content: center;
+        color: var(--accent-color);
+        margin-bottom: 2rem;
+    }
+
+    .login-username{
+        background-color: var(--accent-color);
+        color: var(--p-font-light-color);
+        height: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 15rem;
+        margin: 0.5rem;
+        border-radius: 0.5rem;
+    }
+        .login-username input{
+            background-color: transparent;
+            border: none;
+            font-size: var(--font-size);
+        }
+    
+    .login-password{
+        background-color: var(--accent-color);
+        color: var(--p-font-light-color);
+        height: 2.25rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.5rem;
+        gap: 0.5rem;
+        width: 15rem;
+        border-radius: 0.5rem;
+    }
+        .login-password input{
+            background-color: transparent;
+            border: none;
+            font-size: var(--font-size);
+        }
+    .login-remember-me{
+        font-size: small;
+    }
+    .login-btn{
+        background-color: var(--accent-color);
+    }

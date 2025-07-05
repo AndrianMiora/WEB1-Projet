@@ -34,7 +34,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 const date = dateCreation.toLocaleString()
                 
                 const tags = tag.split(" ")
-                                .filter(tag => tag.startsWith("#")).map(tag => `<span class="note-tag"> ${tag}</span>`);
+                                .filter(tag => tag.startsWith("#"))
+                                .map(tag => `<span class="note-tag"> ${tag}</span>`)
+                                .join(" ");
 
                                 console.log(tag);
                 noteCard.innerHTML = `
@@ -52,13 +54,81 @@ document.addEventListener("DOMContentLoaded", function(){
                         if (confirmationSupp) {
                             noteCard.remove();
                         }
-                })
+                });
 
                 container.appendChild(noteCard);
                 noteModal.remove();
             });
             noteModal.querySelector(".close-note").addEventListener("click", function(){
                 noteModal.remove();
-            })
+            });
     });
+
+    const profileToggle = document.getElementById("profile-menu-toggle");
+    const dropdown = document.getElementById("profile-dropdown");
+
+    profileToggle.addEventListener("click", function () {
+        const isVisible = dropdown.classList.contains("show");
+
+        if (isVisible) {
+            dropdown.classList.remove("show");
+        } else {
+            dropdown.classList.add("show");
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        const clickedInside = event.target.closest(".dropdown");
+        if (!clickedInside) {
+            dropdown.classList.remove("show");
+        }
+    });
+
+    const filterSelect = document.getElementById("filter-select");
+
+    filterSelect.addEventListener("change", function () {
+        const notes = Array.from(container.getElementsByClassName("note-card"));
+
+        let sortedNotes = notes;
+
+        if (this.value === "title-asc") {
+            sortedNotes = notes.sort((a, b) =>
+                a.querySelector("h3").textContent.localeCompare(b.querySelector("h3").textContent)
+            );
+        } else if (this.value === "title-desc") {
+            sortedNotes = notes.sort((a, b) =>
+                b.querySelector("h3").textContent.localeCompare(a.querySelector("h3").textContent)
+            );
+        } else if (this.value === "date-new") {
+            sortedNotes = notes.sort((a, b) =>
+                new Date(b.querySelector(".note-date").textContent) - new Date(a.querySelector(".note-date").textContent)
+            );
+        } else if (this.value === "date-old") {
+            sortedNotes = notes.sort((a, b) =>
+                new Date(a.querySelector(".note-date").textContent) - new Date(b.querySelector(".note-date").textContent)
+            );
+        }
+
+        container.innerHTML = "";
+        sortedNotes.forEach(note => container.appendChild(note));
+    });
+
+    const searchBox = document.getElementById("search-box");
+
+    searchBox.addEventListener("input", function () {
+        const query = this.value.toLowerCase().trim();
+        const notes = container.getElementsByClassName("note-card");
+
+        Array.from(notes).forEach(note => {
+            const title = note.querySelector("h3").textContent.toLowerCase();
+            const tags = note.querySelector(".tag").textContent.toLowerCase();
+            
+            if (title.includes(query) || tags.includes(query)) {
+                note.style.display = "block";
+            } else {
+                note.style.display = "none";
+            }
+        });
+    });
+
 });

@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>memoByte</title>
-    <link href="./output.css" rel="stylesheet">
+    <title>penseByte</title>
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js" defer></script>    
 
@@ -36,7 +35,7 @@
                 <div class="nav-logo">
                     <i class="fa-solid fa-file-code"></i>
                 </div>
-                <span class="nav-name"> &lt; memoByte /&gt; </span>
+                <span class="nav-name"> &lt;penseByte/&gt; </span>
             </div>
             
         <div class="nav_right">
@@ -46,20 +45,36 @@
                     id="search-box"
                     type="text"
                     class="search-bar_input"
-                    placeholder="search notes..."
+                    placeholder="chercher notes..."
                     />
                     <button type="submit" class="search-bar_btn" id="search-bar_btn">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button> 
                 </form>        
             </div>
+
+
             
-            <div class="nav_profile">
-                <i class="fa-solid fa-circle-user"></i>
+            <div class="nav_sort">
+                <select id="filter-select" class="filter-select">
+                    <option value="">Trier par...</option>
+                    <option value="title-asc">A → Z</option>
+                    <option value="title-desc">Z → A</option>
+                    <option value="date-new">Nouveau → Ancien</option>
+                    <option value="date-old">Ancien → Nouveau</option>
+                </select>
             </div>
-            <div class="nav_filter">
-                <i class="fa-solid fa-filter"></i>
+            
+            <div class="dropdown">
+                <button id="profile-menu-toggle" class="dropbtn nav_profile">
+                  <i class="fa-solid fa-circle-user"></i>
+                </button>
+                <div id="profile-dropdown" class="dropdown-content">
+                  <a href="login.html">se connecter</a>
+                  <a href="signup.html">s'inscrire</a>
+                </div>
             </div>
+
         </div>
     </nav>
 
@@ -67,7 +82,7 @@
     <main>
         <div class="main_new-note" id="new-note_btn">
             <i class="fa-solid fa-plus"></i>
-            <p> Add Note</p>
+            <p> ajouter note</p>
         </div>
         
         <div class="container" id="container">
@@ -78,7 +93,7 @@
     
     <!-- Footer -->
     <footer>
-        <h4>Vous avez au total 9 notes</h4>
+        <h4>vous avez au total ... notes</h4>
     </footer>
     
 </body>
