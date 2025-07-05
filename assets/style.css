@@ -122,6 +122,77 @@ nav {
     color: #3498db;
 }
 
+/* Notifications */
+.nav_notifications {
+    position: relative;
+    font-size: 1.3rem;
+    color: #ecf0f1;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav_notifications:hover {
+    color: #3498db;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Thème sombre/clair */
+.theme-toggle {
+    background: none;
+    border: none;
+    color: #ecf0f1;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: #837c7c;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 12px;
+    transform: translateY(5px);
+    transition: all 0.3s ease;
+}
+
+/* Mode sombre */
+.dark-mode {
+    background: #1a1a1a;
+    color: #ecf0f1;
+}
+
+.dark-mode nav {
+    background: #2c3e50;
+}
+
+.dark-mode .search-bar {
+    background: #34495e;
+}
+
+.dark-mode .search-bar_input {
+    background: #34495e;
+    color: #ecf0f1;
+}
+
+.dark-mode .search-bar_input::placeholder {
+    color: #95a5a6;
+}
+
 /* Bouton menu mobile */
 
 .nav_hamburger {
