@@ -54,19 +54,19 @@
 
   // Toggle thème sombre/clair
   function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
-    const isDark = document.body.classList.contains('dark-mode');
-    
+    document.body.classList.toggle('light-mode');
+    const isLight = document.body.classList.contains('light-mode');
+
     // Changer l'icône
-    const icon = isDark ? 'fa-sun' : 'fa-moon';
+    const icon = isLight ? 'fa-moon' : 'fa-sun';
     themeToggle.querySelector('i').className = `fa-solid ${icon}`;
     mobileThemeToggle.querySelector('i').className = `fa-solid ${icon}`;
-    
+
     // Changer le texte mobile
-    mobileThemeToggle.querySelector('span').textContent = isDark ? 'Mode clair' : 'Mode sombre';
-    
+    mobileThemeToggle.querySelector('span').textContent = isLight ? 'Mode sombre' : 'Mode clair';
+
     // Sauvegarder la préférence
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
 }
 
 // Charger le thème sauvegardé
