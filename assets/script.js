@@ -16,7 +16,8 @@
     //mode sombre pour mobile
         const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
 
-  // Petit Menu caché avec ///
+  // Petit Menu caché avec /// ( triple barre)
+  
   hamburger.addEventListener('click', function() {
       hamburger.classList.toggle('active');
       mobileMenu.classList.toggle('active');
@@ -39,6 +40,66 @@
       }
   });
 
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  // Gestion des notifications
+  document.getElementById('notifications').addEventListener('click', function() {
+    alert('Vous avez 3 nouvelles notifications!');
+});
+
+// Gestion des liens du profil
+// A remplacer avec le menu du mail
+
+document.getElementById('profile-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Redirection vers le profil utilisateur');
+});
+
+document.getElementById('settings-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Redirection vers les paramètres');
+});
+
+document.getElementById('help-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Redirection vers l\'aide');
+});
+
+document.getElementById('logout-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    if (confirm('Êtes-vous sûr de vouloir vous déconnecter?')) {
+        alert('Déconnexion en cours...');
+    }
+});
+
+// Redimensionnement de la fenêtre
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+    }
+});
+
+// Recherche en temps réel
+document.getElementById('search-box').addEventListener('input', function(e) {
+    const searchTerm = e.target.value.toLowerCase();
+    if (searchTerm.length > 2) {
+        console.log('Recherche en cours:', searchTerm);
+        // Ici vous pourriez ajouter la logique de recherche
+    }
+});
 
 
 
