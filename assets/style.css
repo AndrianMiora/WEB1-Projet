@@ -112,6 +112,11 @@ nav {
     display: flex;
     align-items: center;
 }
+.nav_filter {
+    font-size: x-large;
+    display: flex;
+    align-items: center; 
+}
 
 /* main */
 main {
