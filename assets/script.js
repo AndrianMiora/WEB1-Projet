@@ -1,3 +1,52 @@
+// Script pour le menu hamburger
+
+    // pour le petit icon de nav bar
+    const hamburger = document.getElementById('nav_hamburger');
+
+    // affichage du navBar pour moile
+        const mobileMenu = document.getElementById('nav_mobile');
+
+    // le profil pour simple test
+        const profileDropdown = document.getElementById('profile-dropdown');
+
+    // mode sombre et activer le nav bar
+        const profileButton = document.getElementById('profile');
+        const themeToggle = document.getElementById('theme-toggle');
+
+    //mode sombre pour mobile
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+
+  // Petit Menu caché avec ///
+  hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+  });
+
+  // Menu profil dropdown
+  profileButton.addEventListener('click', function() {
+    profileDropdown.classList.toggle('active');
+  });
+
+  // Fermer les menus quand on clique ailleurs
+  document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+          hamburger.classList.remove('active');
+          mobileMenu.classList.remove('active');
+      }
+      
+      if (!profileButton.contains(e.target)) {
+          profileDropdown.classList.remove('active');
+      }
+  });
+
+
+
+
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function(){
     const ajouterNote = document.getElementById("new-note_btn");
     const container = document.getElementById("container");
