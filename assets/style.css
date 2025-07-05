@@ -116,7 +116,7 @@ nav {
 /* main */
 main {
     padding: 2rem;
-    height: 78vh;
+    height: 80vh;
     width: 100vw;
     background-color: var(--primary-color);
     display: flex;
@@ -300,7 +300,7 @@ main {
 
 /* footer */
 footer {
-    height: 10vh;
+    height: 8vh;
     width: 100vw;
     background-color: var(--secondary-color);
     color: var(--p-font-color);
@@ -309,3 +309,5 @@ footer {
     justify-content: center;
 }
 
+
+/*------------------------Login Page----------------------------------*/
