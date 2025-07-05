@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 
                 const dateCreation = new Date();
                 const date = dateCreation.toLocaleString()
+                const contenu = noteModal.querySelector(".note-content").value.trim();
                 
                 const tags = tag.split(" ")
                                 .filter(tag => tag.startsWith("#"))
@@ -41,8 +42,8 @@ document.addEventListener("DOMContentLoaded", function(){
                                 console.log(tag);
                 noteCard.innerHTML = `
                 <h3>${titre || "Nouvelle Note"}</h3>
-                
                 <p class="note-date">${date}</p>
+                <p class="note-body">${contenu}</p>
                 <div class="tag">${tags}</div>
                 <div class="note-btn">
                     <button class="edit-note"><i class="fa-solid fa-pen-to-square"></i></button>
@@ -55,6 +56,47 @@ document.addEventListener("DOMContentLoaded", function(){
                             noteCard.remove();
                         }
                 });
+
+                noteCard.querySelector(".edit-note").addEventListener("click", function(){
+                    const currentTitle = noteCard.querySelector("h3").textContent;
+                    const currentContent = noteCard.querySelector(".note-body").textContent;
+                    const currentTags = Array.from(noteCard.querySelectorAll(".note-tag")).map(tag => tag.textContent).join(" ");
+                
+                    const noteModal = document.createElement("div");
+                    noteModal.classList.add("note-modal");
+                
+                    noteModal.innerHTML = `
+                        <div class="note-modal-content">
+                            <textarea class="note-title">${currentTitle}</textarea>
+                            <textarea class="note-content">${currentContent}</textarea>
+                            <input class="note-tags" value="${currentTags}" type="text">
+                            <div class="modal-actions">
+                                <button class="save-note">Enregistrer</button>
+                                <button class="close-note">Annuler</button>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(noteModal);
+                
+                    noteModal.querySelector(".save-note").addEventListener("click", function(){
+                        noteCard.querySelector("h3").textContent = noteModal.querySelector(".note-title").value.trim();
+                        noteCard.querySelector(".note-body").textContent = noteModal.querySelector(".note-content").value.trim();
+                
+                        const newTagInput = noteModal.querySelector(".note-tags").value.trim();
+                        const newTags = newTagInput.split(" ")
+                                                .filter(tag => tag.startsWith("#"))
+                                                .map(tag => `<span class="note-tag">${tag}</span>`)
+                                                .join(" ");
+                        noteCard.querySelector(".tag").innerHTML = newTags;
+                
+                        noteModal.remove();
+                    });
+                
+                    noteModal.querySelector(".close-note").addEventListener("click", function(){
+                        noteModal.remove();
+                    });
+                });
+                
 
                 container.appendChild(noteCard);
                 noteModal.remove();

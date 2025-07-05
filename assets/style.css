@@ -343,6 +343,14 @@ main {
         margin-bottom: 0.5rem;
     }
 
+    .note-body {
+        max-height: 7rem; 
+        overflow-y: auto;
+        padding-right: 0.5rem; 
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }   
+
     .note-btn button {
         background-color: transparent;
         color: var(--h-font-light-color);
