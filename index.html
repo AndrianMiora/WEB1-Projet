@@ -40,28 +40,81 @@
                 <span class="nav-name"> &lt; memoByte /&gt; </span>
             </div>
             
-        <div class="nav_right">
-            <div class="nav_search-input">
-                <form id="search-form" action="#" class="search-bar">
-                    <input
-                    id="search-box"
-                    type="text"
-                    class="search-bar_input"
-                    placeholder="search notes..."
-                    />
-                    <button type="submit" class="search-bar_btn" id="search-bar_btn">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button> 
-                </form>        
-            </div>
-            
-            <div class="nav_profile">
-                <i class="fa-solid fa-circle-user"></i>
+            <!-- A droite: input search, notification, icon dark/ligth, profil -->
+            <div class="nav_right">
+                <div class="nav_search-input">
+                    <form id="search-form" action="#" class="search-bar">
+                        <input
+                        id="search-box"
+                        type="text"
+                        class="search-bar_input"
+                        placeholder="search notes..."
+                        />
+                        <button type="submit" class="search-bar_btn" id="search-bar_btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button> 
+                    </form>        
+                </div>
+                
+                <!-- Profile qui tombe du bas ( deconnexion, ...) -->
+                <div class="nav_profile" id="profile">
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <!-- Le menu tombant -->
+                    <div class="profile-dropdown" id="profile-dropdown">
+                        <a href="" id="profile-link">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Mon Profil</span>
+                        </a>
+                        <a href="#" id="settings-link">
+                            <i class="fa-solid fa-gear"></i>
+                            <span>Paramètres</span>
+                        </a>
+                        <a href="#" id="help-link">
+                            <i class="fa-solid fa-question-circle"></i>
+                            <span>Aide</span>
+                        </a>
+                        <div class="divider"></div>
+                        <a href="#" id="logout-link">
+                            <i class="fa-solid fa-sign-out-alt"></i>
+                            <span>Se déconnecter</span>
+                        </a>
+                    </div>
+                </div>
             </div>
 
-        </div>
-    </nav>
-    
+                <!-- bouton et menu responsive pour mobile -->
+             <div class="nav_mobile" id="nav_mobile">
+                <div class="nav_search-input">
+                    <form action="#" class="search-bar">
+                        <input type="text" class="search-bar_input" placeholder="search notes..."/>
+                        <button type="submit" class="search-bar_btn">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button> 
+                    </form>        
+                </div>
+                
+                <div class="nav_notifications" style="padding: 0.75rem; border-top: 1px solid #34495e;">
+                    <i class="fa-solid fa-bell"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge">3</span>
+                </div>
+
+                <div class="nav_profile">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span>Mon Profil</span>
+                </div>
+
+                <div style="padding: 0.75rem; border-top: 1px solid #34495e;">
+                    <button class="theme-toggle" id="mobile-theme-toggle" style="background: none; border: none; color: #ecf0f1; display: flex; align-items: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-moon"></i>
+                        <span>Mode sombre</span>
+                    </button>
+                </div>
+            </div>  
+                
+        </nav>
+
     
     <!-- Format des notes -->
     <main>
