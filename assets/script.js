@@ -21,16 +21,38 @@ document.addEventListener("DOMContentLoaded", function(){
             container.appendChild(noteModal);
 
             noteModal.querySelector(".save-note").addEventListener("click", function(){
+
                 const titre = noteModal.querySelector(".note-title").value.trim();
+
                 const tag = noteModal.querySelector(".note-tags").value.trim();
+
                 const noteCard = document.createElement("div");
                 noteCard.classList.add("note-card");
-                const tags = tag.split(" ").filter(tag => tag.startsWith("#")).map(tag => `<span class="note-tag"> ${tags}</span>`);
 
+                
+                const dateCreation = new Date();
+                const date = dateCreation.toLocaleString()
+                
+                const tags = tag.split(" ")
+                                .filter(tag => tag.startsWith("#")).map(tag => `<span class="note-tag"> ${tag}</span>`);
+
+                                console.log(tag);
                 noteCard.innerHTML = `
                 <h3>${titre || "Nouvelle Note"}</h3>
+                
+                <p class="note-date">${date}</p>
                 <div class="tag">${tags}</div>
+                <div class="note-btn">
+                    <button class="edit-note"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="delete-note"><i class="fa-solid fa-trash"></i></button>
                 `;
+
+                noteCard.querySelector(".delete-note").addEventListener("click", function(){
+                    const confirmationSupp = confirm("Etes-vous sur de vouloir supprimer cette note?");
+                        if (confirmationSupp) {
+                            noteCard.remove();
+                        }
+                })
 
                 container.appendChild(noteCard);
                 noteModal.remove();
