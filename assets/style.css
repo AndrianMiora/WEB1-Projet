@@ -119,7 +119,8 @@ nav {
 }
 
 .nav_profile:hover {
-    color: #3498db;
+    color: #f5fbff;
+    background-color: var(--accent-light-color);
 }
 
 /* Notifications */
@@ -132,7 +133,8 @@ nav {
 }
 
 .nav_notifications:hover {
-    color: #3498db;
+    color: #f5fbff;
+    background-color: var(--h-font-light-color);
 }
 
 .notification-badge {
@@ -162,12 +164,9 @@ nav {
 }
 
 .theme-toggle:hover {
-    color: #837c7c;
-    background-color: #fff;
-    border-radius: 50%;
-    padding: 12px;
-    transform: translateY(5px);
-    transition: all 0.3s ease;
+    color: #f5fbff;
+    background-color: var(--h-font-light-color);
+
 }
 
 /* Mode sombre */
@@ -265,7 +264,8 @@ nav {
 }
 
 .nav_mobile .nav_profile:hover {
-    background: #34495e;
+    color: #f5fbff;
+    background-color: var(--h-font-light-color);
 }
 
 
@@ -281,7 +281,9 @@ nav {
 body{
     color: var(--p-font-color);
 }
+
 /*  navbar */
+
 nav {
     height: 12vh;
     width: 100vw;
