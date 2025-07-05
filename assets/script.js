@@ -52,6 +52,41 @@
 
 
 
+  // Toggle thème sombre/clair
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    const isDark = document.body.classList.contains('dark-mode');
+    
+    // Changer l'icône
+    const icon = isDark ? 'fa-sun' : 'fa-moon';
+    themeToggle.querySelector('i').className = `fa-solid ${icon}`;
+    mobileThemeToggle.querySelector('i').className = `fa-solid ${icon}`;
+    
+    // Changer le texte mobile
+    mobileThemeToggle.querySelector('span').textContent = isDark ? 'Mode clair' : 'Mode sombre';
+    
+    // Sauvegarder la préférence
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+}
+
+// Charger le thème sauvegardé
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    themeToggle.querySelector('i').className = 'fa-solid fa-sun';
+    mobileThemeToggle.querySelector('i').className = 'fa-solid fa-sun';
+    mobileThemeToggle.querySelector('span').textContent = 'Mode clair';
+}
+
+themeToggle.addEventListener('click', toggleTheme);
+mobileThemeToggle.addEventListener('click', toggleTheme);
+
+
+
+
+
+
+
 
 
   // Gestion des notifications
