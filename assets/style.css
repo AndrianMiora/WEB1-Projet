@@ -245,6 +245,29 @@ nav {
 }
 
 
+/* Menu déroulant profil */
+.nav_profile {
+    position: relative;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 76px;
+    right: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    padding: 0.5rem 0;
+    min-width: 200px;
+    z-index: 1000;
+    display: none;
+}
+
+.profile-dropdown.active {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
 
 /* main */
 main {
@@ -257,14 +280,126 @@ main {
 }
 
 
+
 /* footer */
 footer {
     height: 8vh;
     width: 100vw;
     background-color: var(--secondary-color);
     color: var(--p-font-color);
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    /* justify-content: center; */
 }
 
+
+
+footer button {
+    background: #bdbaba;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+footer button:hover {
+    background: #c0392b;
+}
+
+
+
+
+
+/* keyframes pour le navbar mobiles */
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* keyframes pour le dropdown */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Styles responsive du navbar seulement  */
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .nav_right {
+        display: none;
+    }
+
+    .nav_hamburger {
+        display: flex;
+    }
+
+    .nav-name {
+        font-size: 1rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.75rem;
+    }
+
+    .nav_left {
+        gap: 0.5rem;
+    }
+
+    .nav-name {
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+}
+
+
+/* partie semi responsive de la page */ 
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}
