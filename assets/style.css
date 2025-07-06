@@ -1,0 +1,861 @@
+/* -- Root -- */
+:root {
+    --primary-color: #11120d;
+    --secondary-color: #565449;
+    --accent-color: #D8CFBC;
+    --p-font-color: #fffbf4;
+    --h-font-color: #4f493f;
+    --primary-light-color: #fffbf4;
+    --secondary-light-color: #D8CFBC;
+    --accent-light-color: #4f493f;
+    --p-font-light-color: #11120d;
+    --h-font-light-color: #565449;
+    --font-size: 1.125rem;
+    --header-size: 2.125rem;
+    --logo-img-w: 50px;
+    --logo-img-h: 50px;
+    --icon-w: 25px;
+    --icon-h: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mode sombre par défaut */
+body {
+    color: var(--p-font-color);
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mode clair */
+body.light-mode {
+    color: var(--p-font-light-color);
+    background-color: var(--primary-light-color);
+}
+
+/* Navbar */
+nav {
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--secondary-color);
+    color: var(--p-font-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: 100vw;
+    height: 12vh;
+    transition: all 0.3s ease;
+}
+
+body.light-mode nav {
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav_left {
+    display: flex;
+    gap: 3ch;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-logo > i {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+body.light-mode .nav-logo {
+    color: var(--accent-light-color);
+}
+
+.nav-name {
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    font-family: 'Montserrat';
+}
+
+body.light-mode .nav-name {
+    color: var(--p-font-light-color);
+}
+
+.nav_right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav_search-input .search-bar {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    height: 7vh;
+    width: 17vw;
+    background-color: var(--primary-color);
+    border-radius: 30px;
+    border: 1px solid var(--h-font-color);
+    transition: all 0.3s ease;
+}
+
+body.light-mode .search-bar {
+    background: var(--primary-light-color);
+    border: 1px solid var(--h-font-light-color);
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+body.light-mode .search-bar:focus-within {
+    box-shadow: 0 0 0 2px var(--accent-light-color);
+}
+
+.nav_search-input .search-bar input {
+    width: 100%;
+    background-color: transparent;
+    font-family: "Montserrat";
+    outline: none;
+    border: none;
+    color: var(--p-font-color);
+}
+
+body.light-mode .search-bar_input {
+    color: var(--p-font-light-color);
+}
+
+.search-bar_input::placeholder {
+    color: var(--h-font-color);
+}
+
+body.light-mode .search-bar_input::placeholder {
+    color: var(--h-font-light-color);
+}
+
+.search-bar .search-bar_btn {
+    background-color: transparent;
+    padding: 10px;
+    color: var(--p-font-color);
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.3s all ease-in;
+}
+
+body.light-mode .search-bar_btn {
+    color: var(--p-font-light-color);
+}
+
+.nav_search-input .search-bar button:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+}
+
+body.light-mode .search-bar_btn:hover {
+    background: var(--accent-light-color);
+    color: var(--primary-light-color);
+}
+
+.nav_profile {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .nav_profile {
+    color: var(--p-font-light-color);
+}
+
+.nav_profile:hover {
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+}
+
+body.light-mode .nav_profile:hover {
+    color: var(--primary-light-color);
+    background-color: var(--accent-light-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--p-font-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+body.light-mode .theme-toggle {
+    color: var(--p-font-light-color);
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+    height: 30px;
+    width: 30px;
+}
+
+body.light-mode .theme-toggle:hover {
+    color: var(--primary-light-color);
+    background-color: var(--accent-light-color);
+}
+
+.nav_hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.nav_hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--p-font-color);
+    margin: 3px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+body.light-mode .nav_hamburger span {
+    background: var(--p-font-light-color);
+}
+
+.nav_hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.nav_hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav_hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.nav_mobile {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--secondary-color);
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    border-top: 1px solid var(--h-font-color);
+}
+
+body.light-mode .nav_mobile {
+    background: var(--secondary-light-color);
+    border-top: 1px solid var(--h-font-light-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.nav_mobile.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+.nav_mobile .nav_search-input {
+    margin-bottom: 1rem;
+}
+
+.nav_mobile .search-bar_input {
+    width: 100%;
+}
+
+.nav_mobile .nav_profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-top: 1px solid var(--h-font-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .nav_mobile .nav_profile {
+    border-top: 1px solid var(--h-font-light-color);
+}
+
+.nav_mobile .nav_profile:hover {
+    color: var(--primary-color);
+    background-color: var(--accent-color);
+}
+
+body.light-mode .nav_mobile .nav_profile:hover {
+    color: var(--primary-light-color);
+    background-color: var(--accent-light-color);
+}
+
+.dropbtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--p-font-color);
+    font-size: 1.5rem;
+}
+
+body.light-mode .dropbtn {
+    color: var(--p-font-light-color);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--primary-light-color);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    min-width: 160px;
+    border-radius: 0.5rem;
+    z-index: 10;
+}
+
+body.light-mode .dropdown-content {
+    background-color: var(--secondary-light-color);
+    border: 1px solid var(--h-font-light-color);
+}
+
+.dropdown-content a {
+    color: var(--p-font-light-color);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: "Montserrat";
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--accent-light-color);
+    color: var(--primary-light-color);
+    border-radius: 0.5rem;
+}
+
+.show {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+.nav_sort {
+    display: flex;
+    align-items: center;
+    font-family: "Montserrat";
+}
+
+.filter-select {
+    padding: 0.5rem;
+    border-radius: 30px;
+    border: 1px solid var(--secondary-light-color);
+    background-color: var(--primary-light-color);
+    color: var(--p-font-light-color);
+    font-size: var(--font-size);
+    font-family: "Montserrat";
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .filter-select {
+    border: 1px solid var(--h-font-light-color);
+}
+
+main {
+    padding: 2rem;
+    height: 80vh;
+    width: 100vw;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode main {
+    background-color: var(--primary-light-color);
+}
+
+.main_new-note {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding: 0.75rem;
+    flex-direction: column;
+    align-items: center;
+    border: dashed var(--accent-color);
+    border-radius: 25%;
+    width: 8rem;
+    height: 7rem;
+    font-family: "Montserrat";
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+body.light-mode .main_new-note {
+    border-color: var(--accent-light-color);
+}
+
+.main_new-note:hover {
+    transform: scale(1.1);
+}
+
+.main_new-note > i {
+    padding: 0.5rem;
+}
+
+.note-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+body.light-mode .note-modal {
+    background-color: var(--secondary-light-color);
+}
+
+.note-modal-content {
+    background-color: var(--primary-color);
+    color: var(--p-font-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 70vw;
+    height: 90vh;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-family: "Montserrat";
+}
+
+body.light-mode .note-modal-content {
+    background-color: var(--primary-light-color);
+    color: var(--p-font-light-color);
+}
+
+.note-title {
+    width: 100%;
+    height: 4rem;
+    border-radius: 1rem;
+    font-size: var(--header-size);
+    font-weight: bold;
+    resize: none;
+    font-family: "Montserrat";
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+    outline: none;
+}
+
+body.light-mode .note-title {
+    border-bottom: 2px solid var(--secondary-light-color);
+}
+
+.note-content {
+    flex-grow: 1;
+    width: 100%;
+    resize: none;
+    padding: 1.25rem;
+    font-size: var(--font-size);
+    border-radius: 1rem;
+    border: 1px solid var(--secondary-color);
+    font-family: "Montserrat";
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+}
+
+body.light-mode .note-content {
+    border: 1px solid var(--secondary-light-color);
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.modal-actions button {
+    height: 3rem;
+    width: 6rem;
+    border-radius: 2rem;
+    font-family: "Montserrat";
+    font-weight: bold;
+    background: var(--accent-color);
+    box-shadow: 0 4px 15px var(--secondary-color);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    color: var(--primary-color);
+}
+
+body.light-mode .modal-actions button {
+    background: var(--accent-light-color);
+    box-shadow: 0 4px 15px var(--secondary-light-color);
+    color: var(--primary-light-color);
+}
+
+.modal-actions button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px var(--secondary-color);
+}
+
+body.light-mode .modal-actions button:hover {
+    box-shadow: 0 5px 20px var(--secondary-light-color);
+}
+
+.note-tags {
+    height: 2.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size);
+    font-family: "Montserrat";
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+    outline: none;
+    border: 1px solid var(--secondary-color);
+}
+
+body.light-mode .note-tags {
+    border: 1px solid var(--secondary-light-color);
+}
+
+.note-tag {
+    background-color: var(--accent-color);
+    color: var(--p-font-light-color);
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+}
+
+body.light-mode .note-tag {
+    background-color: var(--accent-light-color);
+}
+
+.note-card {
+    background-color: var(--accent-color);
+    color: var(--p-font-light-color);
+    width: 15rem;
+    height: auto;
+    min-height: 10rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Montserrat";
+}
+
+body.light-mode .note-card {
+    background-color: var(--accent-light-color);
+}
+
+.note-card h3 {
+    font-size: var(--header-size);
+    margin-bottom: 0.5rem;
+}
+
+.tag {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-family: "Montserrat";
+    font-style: italic;
+}
+
+.note-date {
+    font-size: 0.9rem;
+    font-family: "Montserrat";
+    font-style: italic;
+    color: var(--p-font-light-color);
+    margin-bottom: 0.5rem;
+}
+
+.note-body {
+    max-height: 7rem;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.note-btn button {
+    background-color: transparent;
+    color: var(--h-font-light-color);
+    font-size: var(--font-size);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+body.light-mode .note-btn button {
+    color: var(--h-font-light-color);
+}
+
+.note-btn button:hover {
+    transform: scale(1.2);
+}
+
+.container {
+    height: 100%;
+    max-height: calc(100% - 8rem);
+    overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+footer {
+    height: 8vh;
+    width: 100vw;
+    background-color: var(--secondary-color);
+    color: var(--p-font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    transition: all 0.3s ease;
+}
+
+body.light-mode footer {
+    background-color: var(--secondary-light-color);
+    color: var(--p-font-light-color);
+}
+
+.login-container {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    transition: background-color 0.3s ease;
+}
+
+body.light-mode .login-container {
+    background-color: var(--primary-light-color);
+}
+
+.login-wrapper {
+    width: 50%;
+    height: 60vh;
+    background-color: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px var(--secondary-light-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.light-mode .login-wrapper {
+    background-color: var(--secondary-light-color);
+    box-shadow: 0 0 15px var(--accent-light-color);
+}
+
+.login-wrapper h1 {
+    font-size: var(--header-size);
+    display: flex;
+    justify-content: center;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+body.light-mode .login-wrapper h1 {
+    color: var(--accent-light-color);
+}
+
+.login-username {
+    background-color: var(--accent-color);
+    color: var(--p-font-light-color);
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 15rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+body.light-mode .login-username {
+    background-color: var(--accent-light-color);
+}
+
+.login-username input {
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-size);
+    color: var(--p-font-light-color);
+}
+
+.login-password {
+    background-color: var(--accent-color);
+    color: var(--p-font-light-color);
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+    gap: 0.5rem;
+    width: 15rem;
+    border-radius: 0.5rem;
+}
+
+body.light-mode .login-password {
+    background-color: var(--accent-light-color);
+}
+
+.login-password input {
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-size);
+    color: var(--p-font-light-color);
+}
+
+.login-remember-me {
+    font-size: small;
+    color: var(--p-font-color);
+}
+
+body.light-mode .login-remember-me {
+    color: var(--p-font-light-color);
+}
+
+.login-btn {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .login-btn {
+    background-color: var(--accent-light-color);
+    color: var(--primary-light-color);
+}
+
+.login-btn:hover {
+    background: var(--h-font-color);
+    transform: translateY(-2px);
+}
+
+body.light-mode .login-btn:hover {
+    background: var(--h-font-light-color);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem;
+    }
+
+    .nav_right {
+        display: none;
+    }
+
+    .nav_hamburger {
+        display: flex;
+    }
+
+    .nav-name {
+        font-size: 1rem;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+    }
+
+    .nav_mobile {
+        display: none;
+    }
+
+    .nav_mobile.active {
+        display: block;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.75rem;
+    }
+
+    .nav_left {
+        gap: 0.5rem;
+    }
+
+    .nav-name {
+        font-size: 0.9rem;
+    }
+
+    .nav-logo {
+        font-size: 1rem;
+    }
+}
