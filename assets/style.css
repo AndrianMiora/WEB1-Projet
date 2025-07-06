@@ -633,23 +633,8 @@ body.light-mode .note-btn button {
     padding: 1rem;
 }
 
-footer {
-    height: 8vh;
-    width: 100vw;
-    background-color: var(--secondary-color);
-    color: var(--p-font-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: "Montserrat";
-    transition: all 0.3s ease;
-}
-
-body.light-mode footer {
-    background-color: var(--secondary-light-color);
-    color: var(--p-font-light-color);
-}
-
+/* ---================================Login Container============================================--- */
+/* Login Container */
 .login-container {
     height: 100vh;
     width: 100%;
@@ -661,28 +646,47 @@ body.light-mode footer {
     transition: background-color 0.3s ease;
 }
 
-body.light-mode .login-container {
-    background-color: var(--primary-light-color);
-}
-
+/* Login Wrapper */
 .login-wrapper {
     width: 50%;
     height: 60vh;
     background-color: var(--secondary-color);
     padding: 2.5rem;
     border-radius: 1rem;
-    box-shadow: 0 0 15px var(--secondary-light-color);
+    box-shadow: 0 0 15px var(--secondary-color);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-body.light-mode .login-wrapper {
-    background-color: var(--secondary-light-color);
-    box-shadow: 0 0 15px var(--accent-light-color);
+/* Signup Container */
+.signup-container {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    transition: background-color 0.3s ease;
 }
 
-.login-wrapper h1 {
+/* Signup Wrapper */
+.signup-wrapper {
+    width: 50%;
+    height: auto;
+    background-color: var(--secondary-color);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 15px var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Shared Wrapper Styles */
+.login-wrapper h1,
+.signup-wrapper h1 {
     font-size: var(--header-size);
     display: flex;
     justify-content: center;
@@ -690,13 +694,14 @@ body.light-mode .login-wrapper {
     margin-bottom: 2rem;
 }
 
-body.light-mode .login-wrapper h1 {
-    color: var(--accent-light-color);
-}
-
-.login-username {
+/* Username Input */
+.login-username,
+.signup-name,
+.signup-email,
+.signup-password,
+.signup-confirm-password {
     background-color: var(--accent-color);
-    color: var(--p-font-light-color);
+    color: var(--p-font-color);
     height: 2.25rem;
     display: flex;
     align-items: center;
@@ -705,75 +710,275 @@ body.light-mode .login-wrapper h1 {
     width: 15rem;
     margin: 0.5rem;
     border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease;
 }
 
-body.light-mode .login-username {
-    background-color: var(--accent-light-color);
+.login-username:hover,
+.login-username:focus-within,
+.signup-name:hover,
+.signup-name:focus-within,
+.signup-email:hover,
+.signup-email:focus-within,
+.signup-password:hover,
+.signup-password:focus-within,
+.signup-confirm-password:hover,
+.signup-confirm-password:focus-within {
+    box-shadow: 0 0 0 2px var(--accent-color);
 }
 
-.login-username input {
+.login-username input,
+.signup-name input,
+.signup-email input,
+.signup-password input,
+.signup-confirm-password input {
     background-color: transparent;
     border: none;
     font-size: var(--font-size);
-    color: var(--p-font-light-color);
+    color: var(--p-font-color);
+    font-family: "Montserrat";
+    outline: none;
 }
 
+.login-username input::placeholder,
+.signup-name input::placeholder,
+.signup-email input::placeholder,
+.signup-password input::placeholder,
+.signup-confirm-password input::placeholder {
+    color: var(--h-font-color);
+}
+
+/* Password Input */
 .login-password {
     background-color: var(--accent-color);
-    color: var(--p-font-light-color);
+    color: var(--p-font-color);
     height: 2.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0.5rem;
     gap: 0.5rem;
     width: 15rem;
+    margin: 0.5rem;
     border-radius: 0.5rem;
+    transition: box-shadow 0.3s ease;
 }
 
-body.light-mode .login-password {
-    background-color: var(--accent-light-color);
+.login-password:hover,
+.login-password:focus-within {
+    box-shadow: 0 0 0 2px var(--accent-color);
 }
 
 .login-password input {
     background-color: transparent;
     border: none;
     font-size: var(--font-size);
-    color: var(--p-font-light-color);
+    color: var(--p-font-color);
+    font-family: "Montserrat";
+    outline: none;
 }
 
+.login-password input::placeholder {
+    color: var(--h-font-color);
+}
+
+/* Remember Me Checkbox */
 .login-remember-me {
     font-size: small;
     color: var(--p-font-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
 }
 
-body.light-mode .login-remember-me {
-    color: var(--p-font-light-color);
+.login-remember-me input {
+    cursor: pointer;
 }
 
+/* Login Button and Forgot Password Link */
 .login-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.login-btn button {
     background-color: var(--accent-color);
     color: var(--primary-color);
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    font-family: "Montserrat";
+    font-size: var(--font-size);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-body.light-mode .login-btn {
-    background-color: var(--accent-light-color);
-    color: var(--primary-light-color);
-}
-
-.login-btn:hover {
+.login-btn button:hover {
     background: var(--h-font-color);
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-body.light-mode .login-btn:hover {
-    background: var(--h-font-light-color);
+.login-btn a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: "Montserrat";
+    transition: color 0.3s ease;
 }
+
+.login-btn a:hover {
+    color: var(--h-font-color);
+}
+
+/* Signup Button */
+.signup-btn {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.signup-btn button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: "Montserrat";
+    font-size: var(--font-size);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.signup-btn button:hover {
+    background: var(--h-font-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Other Platforms (GitHub, Google) */
+.login-actions,
+.signup-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.login-actions p,
+.signup-actions p {
+    color: var(--p-font-color);
+    font-size: 0.9rem;
+    font-family: "Montserrat";
+}
+
+.other-platforms {
+    display: flex;
+    gap: 1rem;
+}
+
+.other-platforms button {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-family: "Montserrat";
+    font-size: var(--font-size);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.other-platforms button:hover {
+    background: var(--h-font-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.other-platforms button i {
+    font-size: 1rem;
+}
+
+/* Signup Link */
+.login-signup-link,
+.signup-login-link {
+    margin-top: 1rem;
+}
+
+.login-signup-link p,
+.signup-login-link p {
+    color: var(--p-font-color);
+    font-size: 0.9rem;
+    font-family: "Montserrat";
+}
+
+.login-signup-link a,
+.signup-login-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.login-signup-link a:hover,
+.signup-login-link a:hover {
+    color: var(--h-font-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-wrapper,
+    .signup-wrapper {
+        width: 80%;
+        padding: 1.5rem;
+    }
+
+    .login-username,
+    .login-password,
+    .signup-name,
+    .signup-email,
+    .signup-password,
+    .signup-confirm-password {
+        width: 100%;
+        max-width: 15rem;
+    }
+
+    .other-platforms {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-wrapper,
+    .signup-wrapper {
+        width: 90%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .login-wrapper h1,
+    .signup-wrapper h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .login-username,
+    .login-password,
+    .signup-name,
+    .signup-email,
+    .signup-password,
+    .signup-confirm-password {
+        width: 100%;
+        max-width: none;
+    }
+} 
 
 @keyframes slideDown {
     from {
