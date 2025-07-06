@@ -31,12 +31,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Mode clair */
-body.light-mode {
-    color: var(--p-font-light-color);
-    background-color: var(--primary-light-color);
-}
-
 /* Navbar */
 nav {
     top: 0;
@@ -54,12 +48,6 @@ nav {
     transition: all 0.3s ease;
 }
 
-body.light-mode nav {
-    background-color: var(--secondary-light-color);
-    color: var(--p-font-light-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
 .nav_left {
     display: flex;
     gap: 3ch;
@@ -73,20 +61,12 @@ body.light-mode nav {
     align-items: center;
 }
 
-body.light-mode .nav-logo {
-    color: var(--accent-light-color);
-}
-
 .nav-name {
     font-size: 1.25rem;
     font-weight: 500;
     display: flex;
     align-items: center;
     font-family: 'Montserrat';
-}
-
-body.light-mode .nav-name {
-    color: var(--p-font-light-color);
 }
 
 .nav_right {
@@ -108,17 +88,9 @@ body.light-mode .nav-name {
     transition: all 0.3s ease;
 }
 
-body.light-mode .search-bar {
-    background: var(--primary-light-color);
-    border: 1px solid var(--h-font-light-color);
-}
 
 .search-bar:focus-within {
     box-shadow: 0 0 0 2px var(--accent-color);
-}
-
-body.light-mode .search-bar:focus-within {
-    box-shadow: 0 0 0 2px var(--accent-light-color);
 }
 
 .nav_search-input .search-bar input {
@@ -130,16 +102,8 @@ body.light-mode .search-bar:focus-within {
     color: var(--p-font-color);
 }
 
-body.light-mode .search-bar_input {
-    color: var(--p-font-light-color);
-}
-
 .search-bar_input::placeholder {
     color: var(--h-font-color);
-}
-
-body.light-mode .search-bar_input::placeholder {
-    color: var(--h-font-light-color);
 }
 
 .search-bar .search-bar_btn {
@@ -153,19 +117,12 @@ body.light-mode .search-bar_input::placeholder {
     transition: 0.3s all ease-in;
 }
 
-body.light-mode .search-bar_btn {
-    color: var(--p-font-light-color);
-}
 
 .nav_search-input .search-bar button:hover {
     background-color: var(--accent-color);
     color: var(--primary-color);
 }
 
-body.light-mode .search-bar_btn:hover {
-    background: var(--accent-light-color);
-    color: var(--primary-light-color);
-}
 
 .nav_profile {
     font-size: 1.5rem;
@@ -178,46 +135,11 @@ body.light-mode .search-bar_btn:hover {
     transition: all 0.3s ease;
 }
 
-body.light-mode .nav_profile {
-    color: var(--p-font-light-color);
-}
 
 .nav_profile:hover {
     color: var(--primary-color);
-    background-color: var(--accent-color);
 }
 
-body.light-mode .nav_profile:hover {
-    color: var(--primary-light-color);
-    background-color: var(--accent-light-color);
-}
-
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--p-font-color);
-    font-size: 1.3rem;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    padding: 0.5rem;
-    border-radius: 50%;
-}
-
-body.light-mode .theme-toggle {
-    color: var(--p-font-light-color);
-}
-
-.theme-toggle:hover {
-    color: var(--primary-color);
-    background-color: var(--accent-color);
-    height: 30px;
-    width: 30px;
-}
-
-body.light-mode .theme-toggle:hover {
-    color: var(--primary-light-color);
-    background-color: var(--accent-light-color);
-}
 
 .nav_hamburger {
     display: none;
@@ -235,9 +157,6 @@ body.light-mode .theme-toggle:hover {
     border-radius: 2px;
 }
 
-body.light-mode .nav_hamburger span {
-    background: var(--p-font-light-color);
-}
 
 .nav_hamburger.active span:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);
@@ -264,15 +183,14 @@ body.light-mode .nav_hamburger span {
     border-top: 1px solid var(--h-font-color);
 }
 
-body.light-mode .nav_mobile {
-    background: var(--secondary-light-color);
-    border-top: 1px solid var(--h-font-light-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
 
 .nav_mobile.active {
     display: block;
     animation: slideDown 0.3s ease;
+}
+
+.nav_mobile .search-bar{
+    width: 100%;
 }
 
 .nav_mobile .nav_search-input {
@@ -286,6 +204,7 @@ body.light-mode .nav_mobile {
 .nav_mobile .nav_profile {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem;
     border-top: 1px solid var(--h-font-color);
@@ -293,19 +212,21 @@ body.light-mode .nav_mobile {
     transition: all 0.3s ease;
 }
 
-body.light-mode .nav_mobile .nav_profile {
-    border-top: 1px solid var(--h-font-light-color);
-}
 
 .nav_mobile .nav_profile:hover {
     color: var(--primary-color);
-    background-color: var(--accent-color);
 }
 
-body.light-mode .nav_mobile .nav_profile:hover {
-    color: var(--primary-light-color);
-    background-color: var(--accent-light-color);
+.nav_mobile .filter-select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    width: 100%;
+
 }
+
 
 .dropbtn {
     background-color: transparent;
@@ -315,9 +236,6 @@ body.light-mode .nav_mobile .nav_profile:hover {
     font-size: 1.5rem;
 }
 
-body.light-mode .dropbtn {
-    color: var(--p-font-light-color);
-}
 
 .dropdown {
     position: relative;
@@ -335,10 +253,6 @@ body.light-mode .dropbtn {
     z-index: 10;
 }
 
-body.light-mode .dropdown-content {
-    background-color: var(--secondary-light-color);
-    border: 1px solid var(--h-font-light-color);
-}
 
 .dropdown-content a {
     color: var(--p-font-light-color);
@@ -378,9 +292,6 @@ body.light-mode .dropdown-content {
     transition: all 0.3s ease;
 }
 
-body.light-mode .filter-select {
-    border: 1px solid var(--h-font-light-color);
-}
 
 main {
     padding: 2rem;
@@ -393,9 +304,6 @@ main {
     transition: background-color 0.3s ease;
 }
 
-body.light-mode main {
-    background-color: var(--primary-light-color);
-}
 
 .main_new-note {
     display: flex;
@@ -413,9 +321,6 @@ body.light-mode main {
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-body.light-mode .main_new-note {
-    border-color: var(--accent-light-color);
-}
 
 .main_new-note:hover {
     transform: scale(1.1);
@@ -438,9 +343,6 @@ body.light-mode .main_new-note {
     z-index: 1000;
 }
 
-body.light-mode .note-modal {
-    background-color: var(--secondary-light-color);
-}
 
 .note-modal-content {
     background-color: var(--primary-color);
@@ -456,10 +358,6 @@ body.light-mode .note-modal {
     font-family: "Montserrat";
 }
 
-body.light-mode .note-modal-content {
-    background-color: var(--primary-light-color);
-    color: var(--p-font-light-color);
-}
 
 .note-title {
     width: 100%;
@@ -476,9 +374,6 @@ body.light-mode .note-modal-content {
     outline: none;
 }
 
-body.light-mode .note-title {
-    border-bottom: 2px solid var(--secondary-light-color);
-}
 
 .note-content {
     flex-grow: 1;
@@ -493,9 +388,6 @@ body.light-mode .note-title {
     color: var(--p-font-light-color);
 }
 
-body.light-mode .note-content {
-    border: 1px solid var(--secondary-light-color);
-}
 
 .modal-actions {
     display: flex;
@@ -516,20 +408,12 @@ body.light-mode .note-content {
     color: var(--primary-color);
 }
 
-body.light-mode .modal-actions button {
-    background: var(--accent-light-color);
-    box-shadow: 0 4px 15px var(--secondary-light-color);
-    color: var(--primary-light-color);
-}
 
 .modal-actions button:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 20px var(--secondary-color);
 }
 
-body.light-mode .modal-actions button:hover {
-    box-shadow: 0 5px 20px var(--secondary-light-color);
-}
 
 .note-tags {
     height: 2.5rem;
@@ -543,9 +427,6 @@ body.light-mode .modal-actions button:hover {
     border: 1px solid var(--secondary-color);
 }
 
-body.light-mode .note-tags {
-    border: 1px solid var(--secondary-light-color);
-}
 
 .note-tag {
     background-color: var(--accent-color);
@@ -554,9 +435,6 @@ body.light-mode .note-tags {
     border-radius: 1rem;
 }
 
-body.light-mode .note-tag {
-    background-color: var(--accent-light-color);
-}
 
 .note-card {
     background-color: var(--accent-color);
@@ -571,9 +449,6 @@ body.light-mode .note-tag {
     font-family: "Montserrat";
 }
 
-body.light-mode .note-card {
-    background-color: var(--accent-light-color);
-}
 
 .note-card h3 {
     font-size: var(--header-size);
@@ -615,9 +490,6 @@ body.light-mode .note-card {
     transition: transform 0.2s;
 }
 
-body.light-mode .note-btn button {
-    color: var(--h-font-light-color);
-}
 
 .note-btn button:hover {
     transform: scale(1.2);
@@ -1025,10 +897,21 @@ body.light-mode .note-btn button {
 
     .nav_mobile {
         display: none;
+        position: absolute;
+        top: 12vh;
+        left: 0;
+        width: 100%;
+        background: var(--secondary-color);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        border-top: 1px solid var(--h-font-color);
     }
-
+    
     .nav_mobile.active {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        animation: slideDown 0.3s ease;
     }
 
     main {
@@ -1037,14 +920,11 @@ body.light-mode .note-btn button {
 
     .container {
         grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
     }
 
-    footer {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-        padding: 1rem;
-    }
+
 }
 
 @media (max-width: 480px) {

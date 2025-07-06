@@ -62,10 +62,6 @@
                     <option value="date-old">Ancien → Nouveau</option>
                 </select>
             </div>
-            <!-- Thème du bloc note -->
-            <button class="theme-toggle" id="theme-toggle">
-                <i class="fa-solid fa-moon"></i>
-            </button>
             
             <div class="dropdown">
                 <button id="profile-menu-toggle" class="dropbtn nav_profile">
@@ -99,14 +95,15 @@
                 </div>
                 <div class="nav_profile">
                     <i class="fa-solid fa-circle-user"></i>
-                    <span>profil</span>
                 </div>
-
-                <div style="padding: 0.75rem; border-top: 1px solid #34495e;">
-                    <button class="theme-toggle" id="mobile-theme-toggle" style="background: none; border: none; color: #ecf0f1; display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fa-solid fa-moon"></i>
-                        <span>mode sombre</span>
-                    </button>
+                <div class="nav_sort">
+                    <select id="filter-select" class="filter-select">
+                        <option value="">Trier par...</option>
+                        <option value="title-asc">A → Z</option>
+                        <option value="title-desc">Z → A</option>
+                        <option value="date-new">Nouveau → Ancien</option>
+                        <option value="date-old">Ancien → Nouveau</option>
+                    </select>
                 </div>
             </div>
     </nav>
