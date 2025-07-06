@@ -107,7 +107,7 @@ nav {
 }
 
 .nav_profile {
-    font-size: x-large;
+    font-size: 5rem;
     display: flex;
     align-items: center;
     position: relative;
