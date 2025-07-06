@@ -32,8 +32,10 @@ git --version
 
 **Etape 3**
 ![image](https://github.com/user-attachments/assets/7bfd5569-e5a8-4416-a7b7-7b15220c6843)
+
 Ouvrez le fichier (il se trouve dans l'emplacement ou vous l'aviez clone)
 
 **Etape 4**
 ![image](https://github.com/user-attachments/assets/224c0612-b68f-48db-856d-8da9f20713d1)
+
 Enfin, ouvrez le fichier `index.html` avec google chrome (ou votre navigateur de choix) *et voila!*
