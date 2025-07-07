@@ -1,9 +1,9 @@
-# <penseByte/> by Tsanta Fitia Telina et Miora
+# penseByte by Tsanta Fitia Telina et Miora
 > *Ceci est le projet final de WEB1 des STD24087 et STD24226.*
 
 Il s'agit d'une plateforme de prise de note nommée: penseBtye, petit clin d'oeil à nos cours de PROG2 - API.
 
-## Comment accéder à memoByte?
+## Comment accéder à penseByte?
 **Etape 1**:
 
 ![image](https://github.com/user-attachments/assets/c7cb73e7-7b54-4d7c-8697-ce3e9e51232e)
